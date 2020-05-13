@@ -17,7 +17,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     float pitchRotation;
 
     public bool isDead;
-    public int health = 100000;
+    public int health = 10;
 
     public int keyCount = 0;
     bool hasKey;
@@ -172,6 +172,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         hasKey = false;
         cageCount = SpawnManager.Instance.waveNumber;
         transform.position = playerDefaultPos;
+        transform.rotation = Quaternion.identity;
         playerRb.velocity = Vector3.zero;
     }
 }

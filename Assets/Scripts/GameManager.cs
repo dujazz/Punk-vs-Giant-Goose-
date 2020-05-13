@@ -18,16 +18,17 @@ public class GameManager : MonoSingleton<GameManager>
     private void Start()
     {
         player = GameObject.Find("Player");
-        pausePanel.SetActive(false);
         StartGame();
     }
 
     public void StartGame()
-    {      
+    {
+
+        pausePanel.SetActive(false);
         deathScreen.SetActive(false);        
         playerInfo.SetActive(true);  
         
-        PlayerController.Instance.health = 10000;
+        PlayerController.Instance.health = 10;
         PlayerController.Instance.keyCount = 0;
         PlayerController.Instance.isDead = false;
 
