@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PausePanel : MonoBehaviour
 {
@@ -44,9 +45,8 @@ public class PausePanel : MonoBehaviour
 
     }
 
-    public void ExitGame()
+    public void ToStartScreen()
     {
-        Application.Quit();
-        Debug.Log("Application Quit");
+        SceneManager.LoadScene("MainMenu");
     }
 }

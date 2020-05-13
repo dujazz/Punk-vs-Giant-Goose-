@@ -9,7 +9,6 @@ public class GameManager : MonoSingleton<GameManager>
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI KeyCountText;
     public GameObject pausePanel;
-    public GameObject startScreen;
     public GameObject deathScreen;
     public GameObject playerInfo;
     private GameObject player;
@@ -20,11 +19,11 @@ public class GameManager : MonoSingleton<GameManager>
     {
         player = GameObject.Find("Player");
         pausePanel.SetActive(false);
+        StartGame();
     }
 
     public void StartGame()
-    {
-        startScreen.SetActive(false);        
+    {      
         deathScreen.SetActive(false);        
         playerInfo.SetActive(true);  
         
