@@ -12,12 +12,14 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject deathScreen;
     public GameObject playerInfo;
     private GameObject player;
+    private GameObject wallOfFire;
     private bool pausePanelOn;
     public bool isGameActive;
 
     private void Start()
     {
         player = GameObject.Find("Player");
+        wallOfFire = GameObject.Find("WallOfFire");
         StartGame();
     }
 
@@ -26,8 +28,10 @@ public class GameManager : MonoSingleton<GameManager>
 
         pausePanel.SetActive(false);
         deathScreen.SetActive(false);        
-        playerInfo.SetActive(true);  
-        
+        playerInfo.SetActive(true);
+        SetWallOfFireActive();
+
+
         PlayerController.Instance.health = 10;
         PlayerController.Instance.keyCount = 0;
         PlayerController.Instance.isDead = false;
@@ -38,6 +42,11 @@ public class GameManager : MonoSingleton<GameManager>
         player.GetComponent<Animator>().Rebind();
         player.GetComponent<PlayerController>().ResetPlayer();
         isGameActive = true;
+    }
+
+    public void SetWallOfFireActive(bool setActive = true)
+    {
+        wallOfFire.SetActive(setActive);
     }
 
     // Update is called once per frame

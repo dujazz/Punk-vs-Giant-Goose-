@@ -11,6 +11,7 @@ TagManager:
   - Cure
   - Boss
   - Chick
+  - BossZone
   layers:
   - Default
   - TransparentFX

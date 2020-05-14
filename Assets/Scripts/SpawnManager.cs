@@ -33,6 +33,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         Boss.Instance.isDead = false;
         Boss.Instance.SetImmortal();
+        GameManager.Instance.SetWallOfFireActive();
         PlayerController.Instance.ResetPlayer();
 
         GameManager.Instance.DestrotyAllObjectsByTag("Enemy");
@@ -58,10 +59,17 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private Vector3 GenerateSpawnPosition(float spawnPosY)
     {
-        float spawnPosX = Random.Range(-spawnRange, spawnRange);
-        float spawnPosZ = Random.Range(-spawnRange, spawnRange);
+        float spawnPosX;
+        float spawnPosZ;
+        Vector3 spawnPos;
 
-        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+        do
+        {
+            spawnPosX = Random.Range(-spawnRange, spawnRange);
+            spawnPosZ = Random.Range(-spawnRange, spawnRange);
+            spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+
+        } while (SpawnPosCollision(spawnPos));
 
         return spawnPos;
     }
@@ -69,19 +77,47 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // generate enemies position near by cage with random distance
     private Vector3 GenerateEnemySpawnPosition(float spawnPosY, GameObject cage, float distanceRange = 4.0f)
     {
+        float spawnPosX;
+        float spawnPosZ;
+        Vector3 spawnPos;
 
-        
-        float spawnPosX = Random.Range(cage.transform.position.x - distanceRange, cage.transform.position.x + distanceRange);
-        float spawnPosZ = Random.Range(cage.transform.position.z - distanceRange, cage.transform.position.z + distanceRange);
+        do
+        {
+            spawnPosX = Random.Range(cage.transform.position.x - distanceRange, cage.transform.position.x + distanceRange);
+            spawnPosZ = Random.Range(cage.transform.position.z - distanceRange, cage.transform.position.z + distanceRange);
 
-        spawnPosX = OutOfBoundsControl(spawnPosX);   
-        spawnPosZ = OutOfBoundsControl(spawnPosZ);   
-  
+            spawnPosX = OutOfBoundsControl(spawnPosX);
+            spawnPosZ = OutOfBoundsControl(spawnPosZ);
 
-        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+            spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+
+        } while (SpawnPosCollision(spawnPos));
 
         return spawnPos;
     }
+
+
+    private bool SpawnPosCollision(Vector3 spawnPos, float checkRadius = 1f)
+    {
+        bool hasCollition = false;
+
+        // Collect all colliders within our Obstacle Check Radius
+        Collider[] colliders = Physics.OverlapSphere(spawnPos, checkRadius);
+
+        // Go through each collider collected
+        foreach (Collider col in colliders)
+        {
+            // If this collider is tagged "Obstacle"
+            if (col.tag == "BossZone" || col.tag == "Player" || col.tag == "Cage" || 
+                    col.tag == "Enemy" || col.tag == "Cure" || col.tag == "Key")
+            {
+                // Then this position is not a valid spawn position
+                hasCollition = true;
+            }
+        }
+            return hasCollition;
+        }
+
 
     //Check if enemy spown position, that relative by cage is out of bounds
     private float OutOfBoundsControl(float posAxis)
@@ -98,5 +134,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         {
             return posAxis;
         }
+
     }
 }

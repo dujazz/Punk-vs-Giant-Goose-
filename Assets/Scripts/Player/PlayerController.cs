@@ -45,14 +45,17 @@ public class PlayerController : MonoSingleton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-        ConstrainPlayerPosition();
-
         //throw Bomb
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<ThrowProjectile>().Throw();
         }
+    }
+
+    void FixedUpdate()
+    {
+        MovePlayer();
+        ConstrainPlayerPosition();
     }
 
     void CameraSetup()
@@ -139,6 +142,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             if (cageCount < 1)
             {
                 Boss.Instance.SetVulnarable();
+                GameManager.Instance.SetWallOfFireActive(false);
             }
         }
 
