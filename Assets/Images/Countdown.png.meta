@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 66adeb2a160cf8d43a3a0653c9e2232a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4284386676575201382
+    second: Countdown_0
+  - first:
+      213: -1988940130903719940
+    second: Countdown_1
+  - first:
+      213: 6898371139164222699
+    second: Countdown_2
+  - first:
+      213: 7923392192098530938
+    second: Countdown_3
+  - first:
+      213: -659520008772736808
+    second: Countdown_4
+  - first:
+      213: 4699756198585847173
+    second: Countdown_5
+  - first:
+      213: -3770492014858923555
+    second: Countdown_6
+  - first:
+      213: -5939478934318797864
+    second: Countdown_7
+  - first:
+      213: -4258545578146510693
+    second: Countdown_8
+  - first:
+      213: -803887215809318854
+    second: Countdown_9
+  - first:
+      213: -3171871106015602182
+    second: Countdown_10
+  - first:
+      213: 8371306847386866794
+    second: Countdown_11
+  - first:
+      213: -8668228614963326144
+    second: Countdown_12
+  - first:
+      213: -7298692885192944744
+    second: Countdown_13
+  - first:
+      213: 881612970103811633
+    second: Countdown_14
+  - first:
+      213: -352492929662289304
+    second: Countdown_15
+  - first:
+      213: -9118368596690775013
+    second: Countdown_16
+  - first:
+      213: -7423815886759444824
+    second: Countdown_17
+  - first:
+      213: -5131992411334384459
+    second: Countdown_18
+  - first:
+      213: -6507438351865485090
+    second: Countdown_19
+  - first:
+      213: -6799012028633046113
+    second: Countdown_20
+  - first:
+      213: 5170259535375445953
+    second: Countdown_21
+  - first:
+      213: -98853689245008269
+    second: Countdown_22
+  - first:
+      213: -3928380506409267910
+    second: Countdown_23
+  - first:
+      213: 7172248478207910236
+    second: Countdown_24
+  - first:
+      213: 7340890811689962954
+    second: Countdown_25
+  - first:
+      213: -6844539636868218029
+    second: Countdown_26
+  - first:
+      213: 1707462691304850507
+    second: Countdown_27
+  - first:
+      213: 5694513317600856708
+    second: Countdown_28
+  - first:
+      213: 5684093511771313820
+    second: Countdown_29
+  - first:
+      213: 6230015925823166323
+    second: Countdown_30
+  - first:
+      213: -5088154739192862451
+    second: Countdown_31
+  - first:
+      213: -6583193315283234448
+    second: Countdown_32
+  - first:
+      213: -6404011317922183050
+    second: Countdown_33
+  - first:
+      213: -8661774415958599372
+    second: Countdown_34
+  - first:
+      213: 4606009682092692882
+    second: Countdown_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Countdown_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 303
+        width: 135
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97915e640dca84c0800000000000000
+      internalID: -4284386676575201382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Countdown_1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 295
+        width: 144
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfff6f12d7dd564e0800000000000000
+      internalID: -1988940130903719940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Countdown_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 77
+        width: 126
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4b0be7000fbbf50800000000000000
+      internalID: 6898371139164222699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Countdown_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 75
+        width: 173
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76f222083b85fd60800000000000000
+      internalID: 7923392192098530938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c77e3836ef2468b4cb222b1f01c786bb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
