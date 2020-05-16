@@ -25,7 +25,10 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        ChasePlayer();
+        if (GameManager.Instance.countdownDone)
+        {
+            ChasePlayer();
+        }
     }
 
     protected void ChasePlayer()

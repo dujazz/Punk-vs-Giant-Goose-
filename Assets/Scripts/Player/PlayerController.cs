@@ -54,7 +54,15 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     void FixedUpdate()
     {
-        MovePlayer();
+        if (GameManager.Instance.countdownDone)
+        {
+            MovePlayer();
+        }
+        else
+        {
+            PlayerAnimation.Instance.Movement(0f); 
+        }
+
         ConstrainPlayerPosition();
     }
 
@@ -149,6 +157,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (collision.gameObject.CompareTag("Boss") && Boss.Instance.isImmortal == false)
         {
             Boss.Instance.isDead = true;
+            GameManager.Instance.countdownDone = false;
         }
     }
 

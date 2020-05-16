@@ -10,11 +10,14 @@ public class GameManager : MonoSingleton<GameManager>
     public TextMeshProUGUI KeyCountText;
     public GameObject pausePanel;
     public GameObject deathScreen;
+    public GameObject countdown;
     public GameObject playerInfo;
     private GameObject player;
     private GameObject wallOfFire;
     private bool pausePanelOn;
     public bool isGameActive;
+
+    public bool countdownDone;
 
     private void Start()
     {
@@ -52,6 +55,15 @@ public class GameManager : MonoSingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        if (countdownDone)
+        {
+            countdown.SetActive(false);
+        }
+        else
+        {
+            countdown.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             togglePausePanelOn();
