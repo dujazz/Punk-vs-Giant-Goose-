@@ -8,7 +8,6 @@ public class StartScreen : MonoBehaviour
     public void StartGame() {
         Debug.Log("StartGame");
         SceneManager.LoadScene("Game");
-        PlayerController.Instance.ResetPlayer();
     }
 
     public void ExitGame()

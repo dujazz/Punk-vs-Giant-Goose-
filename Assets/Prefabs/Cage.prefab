@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 7284279970288295170}
   - component: {fileID: 7284279970288295173}
   - component: {fileID: 4912378414217453082}
+  - component: {fileID: 2007512024151887360}
   m_Layer: 0
   m_Name: Cage
   m_TagString: Cage
@@ -139,6 +140,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemParticle: {fileID: 19861012, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
   itemSound: {fileID: 8300000, guid: ad1e7e92faf364edea5027d7c47ed724, type: 3}
+--- !u!208 &2007512024151887360
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284279970288295172}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58, y: 0.61, z: 0.45}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.14, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2495725160803638468
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,9 +11,12 @@ public class PlayerAudio : MonoSingleton <PlayerAudio>
     public float stepsVolume = 0.5f;
 
     public void Footsteps()
-    {        
-        int r = Random.Range(0, steps.Length - 1);
-        audioSource.PlayOneShot(steps[r], stepsVolume);
+    {
+        if (!PlayerController.Instance.isDead)
+        {
+            int r = Random.Range(0, steps.Length - 1);
+            audioSource.PlayOneShot(steps[r], stepsVolume);
+        }
 
         /*
         RaycastHit hit;

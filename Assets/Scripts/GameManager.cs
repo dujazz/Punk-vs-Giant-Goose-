@@ -35,6 +35,7 @@ public class GameManager : MonoSingleton<GameManager>
         SetWallOfFireActive();
 
 
+        PlayerController.Instance.ResetPlayer();
         PlayerController.Instance.health = 10;
         PlayerController.Instance.keyCount = 0;
         PlayerController.Instance.isDead = false;
