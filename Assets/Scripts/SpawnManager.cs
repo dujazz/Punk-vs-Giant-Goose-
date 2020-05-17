@@ -15,7 +15,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.isGameActive && GameManager.Instance.countdownDone && !isSpawning)
+        if (GameManager.Instance.isGameActive && !isSpawning)
         {
             waveNumber = 1;
             SpawnNewWave(waveNumber);

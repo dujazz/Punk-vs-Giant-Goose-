@@ -44,6 +44,9 @@ public class GameManager : MonoSingleton<GameManager>
 
         player.GetComponent<Animator>().Rebind();
         player.GetComponent<PlayerController>().ResetPlayer();
+
+        countdown.SetActive(true);
+
         isGameActive = true;
     }
 
