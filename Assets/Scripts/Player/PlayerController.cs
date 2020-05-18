@@ -132,6 +132,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         {
             health -= collision.gameObject.GetComponent<Enemy>().meleeDamage;
             GameManager.Instance.UpdateHealthText();
+            PlayerAudio.Instance.Hurt();
 
             if (health < 1)
             {

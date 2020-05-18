@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
+using System;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -14,6 +16,12 @@ public class GameManager : MonoSingleton<GameManager>
     public GameObject playerInfo;
     private GameObject player;
     private GameObject wallOfFire;
+
+    public PostProcessVolume postProcessVol;
+
+    bool isRed;
+
+
     private bool pausePanelOn;
     public bool isGameActive;
 
@@ -59,6 +67,8 @@ public class GameManager : MonoSingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        NearDeathPostPocessing();
+
         if (countdownDone)
         {
             countdown.SetActive(false);
@@ -82,6 +92,31 @@ public class GameManager : MonoSingleton<GameManager>
             playerInfo.SetActive(false);
             deathScreen.SetActive(true);
 
+
+        }
+    }
+
+    //change screen to red mode when health is low
+    private void NearDeathPostPocessing()
+    {
+        ColorGrading colorGradingLayer;
+        postProcessVol.profile.TryGetSettings(out colorGradingLayer);
+
+        if (PlayerController.Instance.health <= AudioManager.Instance.nearDeathHelth)
+        {
+            if (!isRed)
+            {
+                colorGradingLayer.active = true;
+                isRed = true;
+            }
+        }
+        else
+        {
+            if (isRed)
+            {
+                colorGradingLayer.active = false;
+                isRed = false;
+            }
 
         }
     }

@@ -9,4 +9,9 @@ public class DeathScreen : MonoBehaviour
     {        
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

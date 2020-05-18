@@ -6,16 +6,28 @@ using UnityEngine.Audio;
 public class PlayerAudio : MonoSingleton <PlayerAudio>
 {
     public AudioSource audioSource;
+
     public AudioClip[] steps;
-    [Range (0,1f)]
+    [Range(0, 1f)]
     public float stepsVolume = 0.5f;
+
+    public AudioClip[] hurts;
+    [Range(0, 1f)]
+    public float hurtsVolume = 0.5f;
+
+    public void Hurt()
+    {
+        if (!PlayerController.Instance.isDead)
+        {
+            PlaySoundFromArray(hurts, hurtsVolume);
+        }
+    }
 
     public void Footsteps()
     {
         if (!PlayerController.Instance.isDead)
         {
-            int r = Random.Range(0, steps.Length - 1);
-            audioSource.PlayOneShot(steps[r], stepsVolume);
+            PlaySoundFromArray(steps, stepsVolume);
         }
 
         /*
@@ -28,5 +40,11 @@ public class PlayerAudio : MonoSingleton <PlayerAudio>
             audioSource.PlayOneShot(steps[r]); 
         }
         */
+    }
+
+    public void PlaySoundFromArray(AudioClip[] soundList, float volume)
+    {
+        int r = Random.Range(0, soundList.Length - 1);
+        audioSource.PlayOneShot(soundList[r], volume);
     }
 }
