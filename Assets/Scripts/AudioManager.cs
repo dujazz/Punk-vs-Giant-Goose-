@@ -29,6 +29,26 @@ public class AudioManager : MonoSingleton <AudioManager>
     // Update is called once per frame
     void Update()
     {
+        /*
+         * 
+        // it works, but i don't now is it works in a good way 
+        // is TransitionTo checks for is snapshot active?
+        // or it do transition to same snapshot every frame?
+
+        if (PlayerController.Instance.health <= nearDeathHelth && !PlayerController.Instance.isDead)
+        {
+            nearDeathSnap.TransitionTo(0.5f);
+        }
+        else if (PlayerController.Instance.health > nearDeathHelth)
+        {
+            defaultSnap.TransitionTo(0.5f);
+        }
+        else if (PlayerController.Instance.isDead)
+        {
+            deathSnap.TransitionTo(0.5f);
+        }
+        */
+
         if (PlayerController.Instance.health <= nearDeathHelth && !PlayerController.Instance.isDead && !nearDeathSnapIsActive)
         {
             nearDeathSnap.TransitionTo(0.5f);
@@ -44,8 +64,7 @@ public class AudioManager : MonoSingleton <AudioManager>
             deathSnapIsActive = false;
 
         }
-
-        if (PlayerController.Instance.isDead && !deathSnapIsActive)
+        else if (PlayerController.Instance.isDead && !deathSnapIsActive)
         {
             deathSnap.TransitionTo(0.5f);
             nearDeathSnapIsActive = false;
@@ -53,4 +72,5 @@ public class AudioManager : MonoSingleton <AudioManager>
             deathSnapIsActive = true;
         }
     }
+
 }

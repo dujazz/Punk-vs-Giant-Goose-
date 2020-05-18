@@ -78,7 +78,7 @@ public class GameManager : MonoSingleton<GameManager>
             countdown.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !deathScreen.activeSelf)
         {
             togglePausePanelOn();
             pausePanel.SetActive(pausePanelOn);
