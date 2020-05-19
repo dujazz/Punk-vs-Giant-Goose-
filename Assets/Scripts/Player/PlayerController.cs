@@ -143,16 +143,20 @@ public class PlayerController : MonoSingleton<PlayerController>
 
         if (collision.gameObject.CompareTag("Cage") && keyCount > 0)
         {
-            keyCount--;
-            GameManager.Instance.UpdateKeyCountText();
-            collision.gameObject.GetComponent<Cage>().PickUp();
-
-            cageCount--;
-            if (cageCount < 1)
+            if (!collision.gameObject.GetComponent<Cage>().IsTaken)
             {
-                Boss.Instance.SetVulnarable();
-                GameManager.Instance.SetWallOfFireActive(false);
+                keyCount--;
+                GameManager.Instance.UpdateKeyCountText();
+                collision.gameObject.GetComponent<Cage>().PickUp();
+
+                cageCount--;
+                if (cageCount < 1)
+                {
+                    Boss.Instance.SetVulnarable();
+                    GameManager.Instance.SetWallOfFireActive(false);
+                }
             }
+
         }
 
         if (collision.gameObject.CompareTag("Boss") && Boss.Instance.isImmortal == false)
@@ -166,17 +170,23 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (other.tag == "Cure")
         {
-            other.gameObject.GetComponent<Consumable>().PickUp();
-            health += 1;
-            GameManager.Instance.UpdateHealthText();
+            if (!other.GetComponent<Consumable>().IsTaken)
+            {
+                other.GetComponent<Consumable>().PickUp();
+                health += 1;
+                GameManager.Instance.UpdateHealthText();
+            }
         }
 
         if (other.tag == "Key")
         {
-            other.gameObject.GetComponent<Consumable>().PickUp();
-            keyCount++;
-            GameManager.Instance.UpdateKeyCountText();
-            hasKey = true;
+            if (!other.gameObject.GetComponent<Consumable>().IsTaken)
+            {
+                other.gameObject.GetComponent<Consumable>().PickUp();
+                keyCount++;
+                GameManager.Instance.UpdateKeyCountText();
+                hasKey = true;
+            }
         }
     }
 

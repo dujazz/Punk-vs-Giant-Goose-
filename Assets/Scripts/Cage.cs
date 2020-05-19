@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class Cage : Item
 {
+    private void Update()
+    {
+        if (this.IsTaken)
+        {
+            GetComponent<Rigidbody>().detectCollisions = false;
+        }
+    }
 
 }
