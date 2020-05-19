@@ -8,11 +8,18 @@ public class Prisoner : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] float flyAwaySpeed = 5f;
 
+    GameObject player;
+
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(player.transform, Vector3.up);
     }
 
     public void Release()

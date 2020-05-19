@@ -40,12 +40,14 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         GameManager.Instance.DestrotyAllObjectsByTag("Cure");
         GameManager.Instance.DestrotyAllObjectsByTag("Cage");
         GameManager.Instance.DestrotyAllObjectsByTag("Key");
+        GameManager.Instance.DestrotyAllObjectsByTag("Prisoner");
 
         //heals up on stage start if it's nearDeathHelth 
         //i need to think about game architecture...
         if (PlayerController.Instance.health <= AudioManager.Instance.nearDeathHelth)
         {
             PlayerController.Instance.health = AudioManager.Instance.nearDeathHelth + 1;
+            GameManager.Instance.UpdateHealthText();
         }
 
 

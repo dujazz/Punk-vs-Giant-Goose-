@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - Chick
   - BossZone
+  - Prisoner
   layers:
   - Default
   - TransparentFX
