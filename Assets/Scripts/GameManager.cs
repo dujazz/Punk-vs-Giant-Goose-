@@ -19,6 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public PostProcessVolume postProcessVol;
 
+    ColorGrading colorGradingLayer;
     bool isRed;
 
 
@@ -31,6 +32,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         player = GameObject.Find("Player");
         wallOfFire = GameObject.Find("WallOfFire");
+        postProcessVol.profile.TryGetSettings(out colorGradingLayer);
         StartGame();
     }
 
@@ -99,9 +101,6 @@ public class GameManager : MonoSingleton<GameManager>
     //change screen to red mode when health is low
     private void NearDeathPostPocessing()
     {
-        ColorGrading colorGradingLayer;
-        postProcessVol.profile.TryGetSettings(out colorGradingLayer);
-
         if (PlayerController.Instance.health <= AudioManager.Instance.nearDeathHelth)
         {
             if (!isRed)

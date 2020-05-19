@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemParticle: {fileID: 5433500126136336621}
   audioSource: {fileID: 4651888906447095809}
-  itemSound: {fileID: 8300000, guid: 37549b8b11fe14a5faf0e30d4a97f159, type: 3}
+  itemSound: {fileID: 8300000, guid: fb1b0f2e6643f874aaf4091be2c228f5, type: 3}
   model: {fileID: 5186643476469017080}
   rotationSpeed: 90
 --- !u!82 &4651888906447095809
@@ -128,7 +128,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 0
   Mute: 0

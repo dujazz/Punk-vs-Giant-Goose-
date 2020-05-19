@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoSingleton <AudioManager>
 {
-   // public AudioSource deathMusic;
-   // public AudioSource heartBeat;
+    public AudioSource defaultMusic;
+    public AudioSource deathMusic;
+    public AudioSource heartBeat;
 
     public AudioMixerSnapshot defaultSnap;
     public AudioMixerSnapshot nearDeathSnap;
@@ -51,6 +52,7 @@ public class AudioManager : MonoSingleton <AudioManager>
 
         if (PlayerController.Instance.health <= nearDeathHelth && !PlayerController.Instance.isDead && !nearDeathSnapIsActive)
         {
+            heartBeat.Play();
             nearDeathSnap.TransitionTo(0.5f);
             nearDeathSnapIsActive = true;
             defaultSnapIsActive = false;
@@ -58,6 +60,7 @@ public class AudioManager : MonoSingleton <AudioManager>
         }
         else if (PlayerController.Instance.health > nearDeathHelth && !defaultSnapIsActive)
         {
+            StopMusic(heartBeat);
             defaultSnap.TransitionTo(0.5f);
             nearDeathSnapIsActive = false;
             defaultSnapIsActive = true;
@@ -66,10 +69,20 @@ public class AudioManager : MonoSingleton <AudioManager>
         }
         else if (PlayerController.Instance.isDead && !deathSnapIsActive)
         {
+            StopMusic(heartBeat);
+            deathMusic.Play();
             deathSnap.TransitionTo(0.5f);
             nearDeathSnapIsActive = false;
             defaultSnapIsActive = false;
             deathSnapIsActive = true;
+        }
+    }
+
+    void StopMusic(AudioSource audioSource)
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 
