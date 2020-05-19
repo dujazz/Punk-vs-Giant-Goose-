@@ -22,7 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
     ColorGrading colorGradingLayer;
     bool isNearDeathMode;
 
-    [Range(0.2f,1f)]
+    [Range(0.2f,0.8f)]
     [SerializeField] float nearDeathSlowMo = 0.75f;
 
 
@@ -36,6 +36,7 @@ public class GameManager : MonoSingleton<GameManager>
         player = GameObject.Find("Player");
         wallOfFire = GameObject.Find("WallOfFire");
         postProcessVol.profile.TryGetSettings(out colorGradingLayer);
+        NearDeathPostPocessing();
         StartGame();
     }
 
@@ -89,14 +90,14 @@ public class GameManager : MonoSingleton<GameManager>
             pausePanel.SetActive(pausePanelOn);
         }
 
-        if (PlayerController.Instance.health < 1)
+        if (PlayerController.Instance.isDead)
         {
             isGameActive = false;
             SpawnManager.Instance.isSpawning = false;
             SpawnManager.Instance.waveNumber = 1;
             playerInfo.SetActive(false);
             deathScreen.SetActive(true);
-
+            Time.timeScale = 1f;
 
         }
     }
