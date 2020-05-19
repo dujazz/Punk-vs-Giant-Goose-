@@ -41,6 +41,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         GameManager.Instance.DestrotyAllObjectsByTag("Cage");
         GameManager.Instance.DestrotyAllObjectsByTag("Key");
 
+        //heals up on stage start if it's nearDeathHelth 
+        //i need to think about game architecture...
+        if (PlayerController.Instance.health <= AudioManager.Instance.nearDeathHelth)
+        {
+            PlayerController.Instance.health = AudioManager.Instance.nearDeathHelth + 1;
+        }
+
 
         for (int i = 0; i < waveNumber; i++)
         {

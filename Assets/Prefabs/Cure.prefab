@@ -114,7 +114,6 @@ MonoBehaviour:
   audioSource: {fileID: 4651888906447095809}
   itemSound: {fileID: 8300000, guid: fb1b0f2e6643f874aaf4091be2c228f5, type: 3}
   model: {fileID: 5186643476469017080}
-  rotationSpeed: 90
 --- !u!82 &4651888906447095809
 AudioSource:
   m_ObjectHideFlags: 0
@@ -212,6 +211,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5942870037132899222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186643476469017080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637935386bd4e714c9547778c97de571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 90
 --- !u!1001 &2433510087986335973
 PrefabInstance:
   m_ObjectHideFlags: 0

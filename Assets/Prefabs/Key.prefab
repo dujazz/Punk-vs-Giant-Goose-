@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2997953028126273470
+--- !u!114 &3551776345958249273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,6 @@ MonoBehaviour:
   audioSource: {fileID: 8287255235985413233}
   itemSound: {fileID: 8300000, guid: 67357478fa899460198f84822b54cc8d, type: 3}
   model: {fileID: 6268269907911436812}
-  rotationSpeed: 90
 --- !u!82 &8287255235985413233
 AudioSource:
   m_ObjectHideFlags: 0

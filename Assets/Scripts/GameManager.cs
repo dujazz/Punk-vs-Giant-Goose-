@@ -20,7 +20,10 @@ public class GameManager : MonoSingleton<GameManager>
     public PostProcessVolume postProcessVol;
 
     ColorGrading colorGradingLayer;
-    bool isRed;
+    bool isNearDeathMode;
+
+    [Range(0.2f,1f)]
+    [SerializeField] float nearDeathSlowMo = 0.75f;
 
 
     private bool pausePanelOn;
@@ -103,18 +106,20 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (PlayerController.Instance.health <= AudioManager.Instance.nearDeathHelth)
         {
-            if (!isRed)
+            if (!isNearDeathMode)
             {
                 colorGradingLayer.active = true;
-                isRed = true;
+                isNearDeathMode = true;
+                Time.timeScale = nearDeathSlowMo;
             }
         }
         else
         {
-            if (isRed)
+            if (isNearDeathMode)
             {
                 colorGradingLayer.active = false;
-                isRed = false;
+                isNearDeathMode = false;
+                Time.timeScale = 1f;
             }
 
         }
