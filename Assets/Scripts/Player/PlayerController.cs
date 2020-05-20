@@ -63,7 +63,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             PlayerAnimation.Instance.Movement(0f); 
         }
 
-        ConstrainPlayerPosition();
+        //ConstrainPlayerPosition();
     }
 
     void CameraSetup()
@@ -100,6 +100,9 @@ public class PlayerController : MonoSingleton<PlayerController>
 
         PlayerAnimation.Instance.Movement(verticalInput);
     }
+
+    //ConstrainPlayerPosition();
+    /*
     
     void ConstrainPlayerPosition()
     {
@@ -124,6 +127,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         }
 
     }
+
+
+    */
 
 
     private void OnCollisionEnter(Collision collision)
@@ -156,13 +162,20 @@ public class PlayerController : MonoSingleton<PlayerController>
                     GameManager.Instance.SetWallOfFireActive(false);
                 }
             }
-
         }
 
         if (collision.gameObject.CompareTag("Boss") && Boss.Instance.isImmortal == false)
         {
             Boss.Instance.isDead = true;
             GameManager.Instance.countdownDone = false;
+        }
+
+
+        if (collision.gameObject.CompareTag("WallOfFire"))
+        {
+            health -= collision.gameObject.GetComponent<WallOfFire>().Damage;
+            GameManager.Instance.UpdateHealthText();
+            PlayerAudio.Instance.Hurt();
         }
     }
 

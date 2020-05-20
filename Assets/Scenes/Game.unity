@@ -3752,6 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  pushForce: 5000
 --- !u!4 &1060991937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2202240975026170421, guid: f4575cbb7a5e68b47a5b89bf366b75e0,
@@ -8387,6 +8388,11 @@ PrefabInstance:
     - target: {fileID: 2202240975026170417, guid: f4575cbb7a5e68b47a5b89bf366b75e0,
         type: 3}
       propertyPath: m_Name
+      value: WallOfFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202240975026170417, guid: f4575cbb7a5e68b47a5b89bf366b75e0,
+        type: 3}
+      propertyPath: m_TagString
       value: WallOfFire
       objectReference: {fileID: 0}
     - target: {fileID: 2202240975026170420, guid: f4575cbb7a5e68b47a5b89bf366b75e0,

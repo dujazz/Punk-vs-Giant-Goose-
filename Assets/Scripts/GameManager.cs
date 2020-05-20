@@ -23,7 +23,7 @@ public class GameManager : MonoSingleton<GameManager>
     bool isNearDeathMode;
 
     [Range(0.2f,0.8f)]
-    [SerializeField] float nearDeathSlowMo = 0.75f;
+    [SerializeField] float nearDeathSlowMo = 0.5f;
 
 
     private bool pausePanelOn;
@@ -37,21 +37,18 @@ public class GameManager : MonoSingleton<GameManager>
         wallOfFire = GameObject.Find("WallOfFire");
         postProcessVol.profile.TryGetSettings(out colorGradingLayer);
         NearDeathPostPocessing();
-        StartGame();
-    }
 
-    public void StartGame()
-    {
+       // StartGame();
 
         pausePanel.SetActive(false);
-        deathScreen.SetActive(false);        
+        deathScreen.SetActive(false);
         playerInfo.SetActive(true);
         SetWallOfFireActive();
 
 
         PlayerController.Instance.ResetPlayer();
-        PlayerController.Instance.health = 10;
-        PlayerController.Instance.keyCount = 0;
+        // PlayerController.Instance.health = 10;
+        // PlayerController.Instance.keyCount = 0;
         PlayerController.Instance.isDead = false;
 
         UpdateKeyCountText();
@@ -64,6 +61,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         isGameActive = true;
     }
+
 
     public void SetWallOfFireActive(bool setActive = true)
     {

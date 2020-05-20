@@ -10,6 +10,7 @@ public class Prisoner : MonoBehaviour
 
     GameObject player;
 
+    bool isFree;
 
     private void Start()
     {
@@ -19,13 +20,17 @@ public class Prisoner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform, Vector3.up);
+        if (!isFree)
+        {
+            transform.LookAt(player.transform);
+        }
     }
 
     public void Release()
     {
         audioSource.PlayOneShot(releaseSound);
         FlyAway();
+        isFree = true;
     }
 
     private void FlyAway()
